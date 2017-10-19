@@ -179,16 +179,13 @@ HEADERS += src/qt/bitcoingui.h \
     src/coincontrol.h \
     src/sync.h \
     src/util.h \
-    src/timestamps.h \
     src/hash.h \
     src/uint256.h \
     src/kernel.h \
-    src/kernel_worker.h \
     src/scrypt.h \
     src/serialize.h \
     src/main.h \
     src/net.h \
-    src/ministun.h \
     src/key.h \
     src/db.h \
     src/txdb.h \
@@ -236,13 +233,7 @@ HEADERS += src/qt/bitcoingui.h \
     src/qt/rpcconsole.h \
     src/version.h \
     src/netbase.h \
-    src/clientversion.h \
-    src/qt/multisigaddressentry.h \
-    src/qt/multisiginputentry.h \
-    src/qt/multisigdialog.h \
-    src/qt/secondauthdialog.h \
-    src/ies.h \
-    src/ipcollector.h
+    src/clientversion.h 
 
 SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/transactiontablemodel.cpp \
@@ -285,7 +276,6 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/transactionview.cpp \
     src/qt/walletmodel.cpp \
     src/bitcoinrpc.cpp \
-    src/rpccrypt.cpp \
     src/rpcdump.cpp \
     src/rpcnet.cpp \
     src/rpcmining.cpp \
@@ -305,8 +295,7 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/qtipcserver.cpp \
     src/qt/rpcconsole.cpp \
     src/noui.cpp \
-    src/kernel.cpp \
-    src/kernel_worker.cpp \
+    src/kernel.cpp 
     
 RESOURCES += \
     src/qt/bitcoin.qrc
@@ -326,7 +315,7 @@ FORMS += \
     src/qt/forms/optionsdialog.ui \
     src/qt/forms/multisigaddressentry.ui \
     src/qt/forms/multisiginputentry.ui \
-    src/qt/forms/multisigdialog.ui \
+    src/qt/forms/multisigdialog.ui 
 
 contains(USE_QRCODE, 1) {
     HEADERS += src/qt/qrcodedialog.h
