@@ -424,4 +424,4 @@ netbsd-*|freebsd-*|openbsd-* {
     LIBS += -lexecinfo
 }
 
-system($$QMAKE -silent)
+system($$QMAKE)
