@@ -13,7 +13,7 @@
 #include "sync.h"
 #include "serialize.h"
 
-#ifdef DB_VERSION_MAJOR >= 5 && DB_VERSION_MINOR >= 3
+#if DB_VERSION_MAJOR >= 5 && DB_VERSION_MINOR >= 3
 // Berkeley DB 5.3 db.h
 #define DB_INIT_CDB     0x00000080
 #define DB_INIT_LOCK    0x00000100
