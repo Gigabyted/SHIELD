@@ -293,7 +293,6 @@ HEADERS += ./src/sync.h \
   ./src/qt/walletmodel.h \
   ./src/qt/signverifymessagedialog.h \
   ./src/qt/sendcoinsdialog.h \ 
-  ./src/qt/i2poptionswidget.h \
   ./src/qt/csvmodelwriter.h \
   ./src/qt/showi2paddresses.h \
   ./src/qt/transactiondescdialog.h \
@@ -394,7 +393,6 @@ SOURCES += ./src/netbase.cpp \
   ./src/main.cpp \
   ./src/protocol.cpp \
   ./src/qt/serveur.cpp \
-  ./src/qt/i2poptionswidget.cpp \
   ./src/qt/notificator.cpp \
   ./src/qt/askpassphrasedialog.cpp \
   ./src/qt/transactiontablemodel.cpp \
