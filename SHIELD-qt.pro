@@ -107,7 +107,7 @@ contains(BITCOIN_NEED_QT_PLUGINS, 1) {
     QTPLUGIN += qcncodecs qjpcodecs qtwcodecs qkrcodecs qtaccessiblewidgets
 }
 
-contains(USE_LEVELDB, 1) {
+
     message(Building with LevelDB transaction index)
     DEFINES += USE_LEVELDB
 
@@ -131,10 +131,7 @@ contains(USE_LEVELDB, 1) {
     QMAKE_EXTRA_TARGETS += genleveldb
     # Gross ugly hack that depends on qmake internals, unfortunately there is no other way to do it.
     QMAKE_CLEAN += $$PWD/src/leveldb/libleveldb.a; cd $$PWD/src/leveldb ; $(MAKE) clean
-} else {
-    message(Building with Berkeley DB transaction index)
-    SOURCES += src/txdb-bdb.cpp
-}
+
 
 
 
@@ -162,7 +159,6 @@ QMAKE_CXXFLAGS_WARN_ON = -fdiagnostics-show-option -Wall -Wextra -Wno-ignored-qu
 # Input
 DEPENDPATH += src src/json src/qt
 HEADERS += src/qt/bitcoingui.h \
-    src/qt/intro.h \
     src/qt/transactiontablemodel.h \
     src/qt/addresstablemodel.h \
     src/qt/optionsdialog.h \
@@ -174,10 +170,6 @@ HEADERS += src/qt/bitcoingui.h \
     src/qt/aboutdialog.h \
     src/qt/editaddressdialog.h \
     src/qt/bitcoinaddressvalidator.h \
-    src/qt/mintingfilterproxy.h \
-    src/qt/mintingtablemodel.h \
-    src/qt/mintingview.h \
-    src/kernelrecord.h \
     src/alert.h \
     src/addrman.h \
     src/base58.h \
@@ -195,7 +187,6 @@ HEADERS += src/qt/bitcoingui.h \
     src/scrypt.h \
     src/serialize.h \
     src/main.h \
-    src/miner.h \
     src/net.h \
     src/ministun.h \
     src/key.h \
@@ -204,7 +195,6 @@ HEADERS += src/qt/bitcoingui.h \
     src/walletdb.h \
     src/script.h \
     src/init.h \
-    src/irc.h \
     src/mruset.h \
     src/json/json_spirit_writer_template.h \
     src/json/json_spirit_writer.h \
@@ -238,7 +228,6 @@ HEADERS += src/qt/bitcoingui.h \
     src/qt/bitcoinunits.h \
     src/qt/qvaluecombobox.h \
     src/qt/askpassphrasedialog.h \
-    src/qt/trafficgraphwidget.h \
     src/protocol.h \
     src/qt/notificator.h \
     src/qt/qtipcserver.h \
@@ -246,7 +235,6 @@ HEADERS += src/qt/bitcoingui.h \
     src/ui_interface.h \
     src/qt/rpcconsole.h \
     src/version.h \
-    src/ntp.h \
     src/netbase.h \
     src/clientversion.h \
     src/qt/multisigaddressentry.h \
@@ -257,7 +245,6 @@ HEADERS += src/qt/bitcoingui.h \
     src/ipcollector.h
 
 SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
-    src/qt/intro.cpp \
     src/qt/transactiontablemodel.cpp \
     src/qt/addresstablemodel.cpp \
     src/qt/optionsdialog.cpp \
@@ -269,25 +256,16 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/aboutdialog.cpp \
     src/qt/editaddressdialog.cpp \
     src/qt/bitcoinaddressvalidator.cpp \
-    src/qt/trafficgraphwidget.cpp \
-    src/qt/mintingfilterproxy.cpp \
-    src/qt/mintingtablemodel.cpp \
-    src/qt/mintingview.cpp \
-    src/kernelrecord.cpp \
     src/alert.cpp \
     src/version.cpp \
     src/sync.cpp \
     src/util.cpp \
     src/netbase.cpp \
-    src/ntp.cpp \
     src/key.cpp \
     src/script.cpp \
     src/main.cpp \
-    src/miner.cpp \
     src/init.cpp \
     src/net.cpp \
-    src/stun.cpp \
-    src/irc.cpp \
     src/checkpoints.cpp \
     src/addrman.cpp \
     src/db.cpp \
@@ -329,20 +307,11 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/noui.cpp \
     src/kernel.cpp \
     src/kernel_worker.cpp \
-    src/qt/multisigaddressentry.cpp \
-    src/qt/multisiginputentry.cpp \
-    src/qt/multisigdialog.cpp \
-    src/qt/secondauthdialog.cpp \
-    src/base58.cpp \
-    src/cryptogram.cpp \
-    src/ecies.cpp \
-    src/ipcollector.cpp
-
+    
 RESOURCES += \
     src/qt/bitcoin.qrc
 
 FORMS += \
-    src/qt/forms/intro.ui \
     src/qt/forms/coincontroldialog.ui \
     src/qt/forms/sendcoinsdialog.ui \
     src/qt/forms/addressbookpage.ui \
@@ -358,7 +327,6 @@ FORMS += \
     src/qt/forms/multisigaddressentry.ui \
     src/qt/forms/multisiginputentry.ui \
     src/qt/forms/multisigdialog.ui \
-    src/qt/forms/secondauthdialog.ui
 
 contains(USE_QRCODE, 1) {
     HEADERS += src/qt/qrcodedialog.h
