@@ -13,6 +13,28 @@
 #include "sync.h"
 #include "serialize.h"
 
+#ifdef DB_VERSION_MAJOR >= 5 && DB_VERSION_MINOR >= 3
+// Berkeley DB 5.3 db.h
+#define DB_INIT_CDB     0x00000080
+#define DB_INIT_LOCK    0x00000100
+#define DB_INIT_LOG     0x00000200
+#define DB_INIT_MPOOL   0x00000400
+#define DB_INIT_MUTEX   0x00000800
+#define DB_INIT_REP     0x00001000
+#define DB_INIT_TXN     0x00002000
+
+#else
+
+// Berkeley DB 4.8 db.h
+#define DB_INIT_CDB     0x00000040
+#define DB_INIT_LOCK    0x00000080
+#define DB_INIT_LOG     0x00000100
+#define DB_INIT_MPOOL   0x00000200
+#define DB_INIT_REP     0x00000400
+#define DB_INIT_TXN     0x00000800
+
+#endif
+
 class CAddrMan;
 class CBlockLocator;
 class CDiskBlockIndex;
