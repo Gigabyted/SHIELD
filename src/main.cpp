@@ -1208,13 +1208,11 @@ unsigned int GetNextTargetRequired_V2(const CBlockIndex* pindexLast, bool fProof
     if (bnNew > bnProofOfWorkLimit[algo])
       bnNew = bnProofOfWorkLimit[algo];
 
-    printf("difficulty: ctual time %" PRId64 ", Scheduled time for this block height = %" PRId64 "\n", now, BlockHeightTime );
-    printf("difficulty: Nominal block interval = %u, regulating on interval %" PRId64 " to get back to schedule.\n", 
-          GetTargetSpacing(pindexLast->nHeight), nIntervalDesired );
-    printf("difficulty: Intervals of last 5/7/9/17 blocks = %" PRId64 "/ %" PRId64 " / %" PRId64 " / %" PRId64 ".\n",
-          avgOf5, avgOf7, avgOf9, avgOf17);
-    printf("difficulty: Difficulty Before Adjustment: %u  %s\n", pindexLast->nBits, bnOld.ToString().c_str());
-    printf("difficulty: Difficulty After Adjustment:  %u  %s\n", bnNew.GetCompact(), bnNew.ToString().c_str());
+    //printf("difficulty: ctual time %" PRId64 ", Scheduled time for this block height = %" PRId64 "\n", now, BlockHeightTime );
+    //printf("difficulty: Nominal block interval = %u, regulating on interval %" PRId64 " to get back to schedule.\n", GetTargetSpacing(pindexLast->nHeight), nIntervalDesired );
+    //printf("difficulty: Intervals of last 5/7/9/17 blocks = %" PRId64 "/ %" PRId64 " / %" PRId64 " / %" PRId64 ".\n",avgOf5, avgOf7, avgOf9, avgOf17);
+    //printf("difficulty: Difficulty Before Adjustment: %u  %s\n", pindexLast->nBits, bnOld.ToString().c_str());
+    //printf("difficulty: Difficulty After Adjustment:  %u  %s\n", bnNew.GetCompact(), bnNew.ToString().c_str());
 
     return bnNew.GetCompact();
      
@@ -1279,8 +1277,8 @@ unsigned int static DarkGravityWave3(const CBlockIndex* pindexLast, uint64 Targe
 
     int64 nTargetTimespan = CountBlocks * TargetBlocksSpacingSeconds;
 
-    if (GetBoolArg("-debugdgw"))
-    	printf("DGW(%s): nActualTimespan = %" PRI64d", nTargetTimespan = %" PRI64d"\n", GetAlgoName(algo).c_str(), nActualTimespan, nTargetTimespan);
+    //if (GetBoolArg("-debugdgw"))
+    	//printf("DGW(%s): nActualTimespan = %" PRI64d", nTargetTimespan = %" PRI64d"\n", GetAlgoName(algo).c_str(), nActualTimespan, nTargetTimespan);
 
     if (nActualTimespan < nTargetTimespan/3)
         nActualTimespan = nTargetTimespan/3;
@@ -1295,13 +1293,13 @@ unsigned int static DarkGravityWave3(const CBlockIndex* pindexLast, uint64 Targe
     if (bnNew > bnProofOfWorkLimit[algo])
         bnNew = bnProofOfWorkLimit[algo];
 
-    if (GetBoolArg("-debugdgw")) {
+    /*if (GetBoolArg("-debugdgw")) {
         printf("Difficulty Retarget - Dark Gravity Well version 3 at height: %d\n", pindexLast->nHeight);
         printf("  nActualTimespan = %" PRI64d", nTargetTimespan = %" PRI64d"\n", nActualTimespan, nTargetTimespan);
         printf("  PastDifficultyAverage: %08x  %s\n", PastDifficultyAverage.GetCompact(), PastDifficultyAverage.getuint256().ToString().c_str());
         printf("  Before:                %08x  %s\n", BlockLastSolved->nBits, CBigNum().SetCompact(BlockLastSolved->nBits).getuint256().ToString().c_str());
         printf("  After:                 %08x  %s\n\n\n", bnNew.GetCompact(), bnNew.getuint256().ToString().c_str());
-    }
+    } */
 
     return bnNew.GetCompact();
 }
