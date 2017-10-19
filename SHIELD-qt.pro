@@ -259,220 +259,220 @@ QMAKE_CXXFLAGS_WARN_ON = -fdiagnostics-show-option -Wall -Wextra -Wformat -Wform
 # Input
 DEPENDPATH += src src/json src/qt
 HEADERS += ./src/sync.h \
-./src/sph_echo.h \
-./src/hashx15.h \
-./src/blake2.h \
-./src/sph_whirlpool.h \
-./src/ui_interface.h \
-./src/checkpoints.h \
-./src/strlcpy.h \ 
-./src/allocators.h \
-./src/alert.h \
-./src/wallet.h \
-./src/walletdb.h \
-./src/hashx13.h \
-./src/mruset.h \
-./src/i2psam.h \
-./src/hash.h \
-./src/qt/sendcoinsentry.h \
-./src/qt/blockbrowser.h \
-./src/qt/coincontroldialog.h \
-./src/qt/bitcoinunits.h \
-./src/qt/editaddressdialog.h \
-./src/qt/transactionfilterproxy.h \
-./src/qt/bitcoingui.h \
-./src/qt/macdockiconhandler.h \ 
-./src/qt/qvaluecombobox.h \
-./src/qt/overviewpage.h \
-./src/qt/qtipcserver.h \
-./src/qt/bitcoinaddressvalidator.h \
-./src/qt/radio.h \
-./src/qt/optionsdialog.h \
-./src/qt/monitoreddatamapper.h \
-./src/qt/guiutil.h \
-./src/qt/walletmodel.h \
-./src/qt/signverifymessagedialog.h \
-./src/qt/sendcoinsdialog.h \ 
-./src/qt/i2poptionswidget.h \
-./src/qt/csvmodelwriter.h \
-./src/qt/showi2paddresses.h \
-./src/qt/transactiondescdialog.h \
-./src/qt/aboutdialog.h \
-./src/qt/transactionrecord.h \
-./src/qt/bitcoinamountfield.h \
-./src/qt/addressbookpage.h \
-./src/qt/transactiondesc.h \
-./src/qt/optionsmodel.h \
-./src/qt/guiconstants.h \
-./src/qt/qrcodedialog.h \
-./src/qt/transactionview.h \
-./src/qt/transactiontablemodel.h \
-./src/qt/chatwindow.h \
-./src/qt/addresstablemodel.h \
-./src/qt/clientmodel.h \
-./src/qt/askpassphrasedialog.h \
-./src/qt/macnotificationhandler.h \
-./src/qt/serveur.h \
-./src/qt/coincontroltreewidget.h \
-./src/qt/qvalidatedlineedit.h \
-./src/qt/notificator.h \ 
-./src/qt/rpcconsole.h \
-./src/sph_sha2.h \
-./src/crypter.h \
-./src/bignum.h \
-./src/coincontrol.h \
-./src/scrypt.h \
-./src/sph_haval.h \
-./src/sph_hamsi.h \
-./src/serialize.h \
-./src/bitcoinrpc.h \
-./src/kernel.h \
-./src/key.h \
-./src/pbkdf2.h \
-./src/script.h \
-./src/sph_types.h \
-./src/db.h \
-./src/blake2-impl.h \
-./src/sph_luffa.h \
-./src/hashx17.h \
-./src/sph_simd.h \
-./src/util.h \
-./src/showi2paddresses.h \
-./src/sph_blake.h \
-./src/keystore.h \
-./src/txdb.h \
-./src/sph_fugue.h \ 
-./src/version.h \ 
-./src/uint256.h \
-./src/sph_jh.h \
-./src/hashgroestl.h \
-./src/hashquark.h \
-./src/chainparamsbase.h \
-./src/sph_groestl.h \
-./src/base58.h \
-./src/hashqubit.h \ 
-./src/sph_shabal.h \
-./src/sph_keccak.h \
-./src/netbase.h \
-./src/hashx11.h \
-./src/bloom.h \
-./src/clientversion.h \
-./src/hashskein.h \
-./src/main.h 
-./src/txdb-leveldb.h \
-./src/hashblake.h \
-./src/addrman.h \
-./src/json/json_spirit_writer_template.h \
-./src/json/json_spirit.h \
-./src/json/json_spirit_error_position.h \   
-./src/json/json_spirit_value.h \
-./src/json/json_spirit_stream_reader.h \
-./src/json/json_spirit_utils.h \
-./src/json/json_spirit_reader.h \
-./src/json/json_spirit_reader_template.h \
-./src/json/json_spirit_writer.h \
-./src/protocol.h \
-./src/i2p.h \
-./src/sph_shavite.h \
-./src/sph_skein.h \
-./src/Lyra2.h \
-./src/net.h \
-./src/serveur.h \
-./src/sph_cubehash.h \
-./src/Sponge.h \
-./src/compat.h \
-./src/sph_bmw.h \
-./src/Lyra2RE.h \
-./src/init.h 
+  ./src/sph_echo.h \
+  ./src/hashx15.h \
+  ./src/blake2.h \
+  ./src/sph_whirlpool.h \
+  ./src/ui_interface.h \
+  ./src/checkpoints.h \
+  ./src/strlcpy.h \ 
+  ./src/allocators.h \
+  ./src/alert.h \
+  ./src/wallet.h \
+  ./src/walletdb.h \
+  ./src/hashx13.h \
+  ./src/mruset.h \
+  ./src/i2psam.h \
+  ./src/hash.h \
+  ./src/qt/sendcoinsentry.h \
+  ./src/qt/blockbrowser.h \
+  ./src/qt/coincontroldialog.h \
+  ./src/qt/bitcoinunits.h \
+  ./src/qt/editaddressdialog.h \
+  ./src/qt/transactionfilterproxy.h \
+  ./src/qt/bitcoingui.h \
+  ./src/qt/macdockiconhandler.h \ 
+  ./src/qt/qvaluecombobox.h \
+  ./src/qt/overviewpage.h \
+  ./src/qt/qtipcserver.h \
+  ./src/qt/bitcoinaddressvalidator.h \
+  ./src/qt/radio.h \
+  ./src/qt/optionsdialog.h \
+  ./src/qt/monitoreddatamapper.h \
+  ./src/qt/guiutil.h \
+  ./src/qt/walletmodel.h \
+  ./src/qt/signverifymessagedialog.h \
+  ./src/qt/sendcoinsdialog.h \ 
+  ./src/qt/i2poptionswidget.h \
+  ./src/qt/csvmodelwriter.h \
+  ./src/qt/showi2paddresses.h \
+  ./src/qt/transactiondescdialog.h \
+  ./src/qt/aboutdialog.h \
+  ./src/qt/transactionrecord.h \
+  ./src/qt/bitcoinamountfield.h \
+  ./src/qt/addressbookpage.h \
+  ./src/qt/transactiondesc.h \
+  ./src/qt/optionsmodel.h \
+  ./src/qt/guiconstants.h \
+  ./src/qt/qrcodedialog.h \
+  ./src/qt/transactionview.h \
+  ./src/qt/transactiontablemodel.h \
+  ./src/qt/chatwindow.h \
+  ./src/qt/addresstablemodel.h \
+  ./src/qt/clientmodel.h \
+  ./src/qt/askpassphrasedialog.h \
+  ./src/qt/macnotificationhandler.h \
+  ./src/qt/serveur.h \
+  ./src/qt/coincontroltreewidget.h \
+  ./src/qt/qvalidatedlineedit.h \
+  ./src/qt/notificator.h \ 
+  ./src/qt/rpcconsole.h \
+  ./src/sph_sha2.h \
+  ./src/crypter.h \
+  ./src/bignum.h \
+  ./src/coincontrol.h \
+  ./src/scrypt.h \
+  ./src/sph_haval.h \
+  ./src/sph_hamsi.h \
+  ./src/serialize.h \
+  ./src/bitcoinrpc.h \
+  ./src/kernel.h \
+  ./src/key.h \
+  ./src/pbkdf2.h \
+  ./src/script.h \
+  ./src/sph_types.h \
+  ./src/db.h \
+  ./src/blake2-impl.h \
+  ./src/sph_luffa.h \
+  ./src/hashx17.h \
+  ./src/sph_simd.h \
+  ./src/util.h \
+  ./src/showi2paddresses.h \
+  ./src/sph_blake.h \
+  ./src/keystore.h \
+  ./src/txdb.h \
+  ./src/sph_fugue.h \ 
+  ./src/version.h \ 
+  ./src/uint256.h \
+  ./src/sph_jh.h \
+  ./src/hashgroestl.h \
+  ./src/hashquark.h \
+  ./src/chainparamsbase.h \
+  ./src/sph_groestl.h \
+  ./src/base58.h \
+  ./src/hashqubit.h \ 
+  ./src/sph_shabal.h \
+  ./src/sph_keccak.h \
+  ./src/netbase.h \
+  ./src/hashx11.h \
+  ./src/bloom.h \
+  ./src/clientversion.h \
+  ./src/hashskein.h \
+  ./src/main.h \
+  ./src/txdb-leveldb.h \
+  ./src/hashblake.h \
+  ./src/addrman.h \
+  ./src/json/json_spirit_writer_template.h \
+  ./src/json/json_spirit.h \
+  ./src/json/json_spirit_error_position.h \   
+  ./src/json/json_spirit_value.h \
+  ./src/json/json_spirit_stream_reader.h \
+  ./src/json/json_spirit_utils.h \
+  ./src/json/json_spirit_reader.h \
+  ./src/json/json_spirit_reader_template.h \
+  ./src/json/json_spirit_writer.h \
+  ./src/protocol.h \
+  ./src/i2p.h \
+  ./src/sph_shavite.h \
+  ./src/sph_skein.h \
+  ./src/Lyra2.h \
+  ./src/net.h \
+  ./src/serveur.h \
+  ./src/sph_cubehash.h \
+  ./src/Sponge.h \
+  ./src/compat.h \
+  ./src/sph_bmw.h \
+  ./src/Lyra2RE.h \
+  ./src/init.h 
 
 SOURCES += ./src/netbase.cpp \
-./src/walletdb.cpp \
-./src/db.cpp \
-./src/key.cpp \
-./src/script.cpp \
-./src/rpcwallet.cpp \
-./src/main.cpp \
-./src/protocol.cpp \
-./src/qt/serveur.cpp \
-./src/qt/i2poptionswidget.cpp \
-./src/qt/notificator.cpp \
-./src/qt/askpassphrasedialog.cpp \
-./src/qt/transactiontablemodel.cpp \
-./src/qt/multisiginputentry.cpp \
-./src/qt/bitcoinamountfield.cpp \
-./src/qt/sendcoinsdialog.cpp \
-./src/qt/multisigaddressentry.cpp \
-./src/qt/bitcoinaddressvalidator.cpp \
-./src/qt/bitcoinunits.cpp \
-./src/qt/transactionview.cpp \
-./src/qt/bitcoinstrings.cpp \
-./src/qt/guiutil.cpp \
-./src/qt/addresstablemodel.cpp \
-./src/qt/editaddressdialog.cpp \
-./src/qt/walletmodel.cpp \
-./src/qt/multisigdialog.cpp \
-./src/qt/optionsmodel.cpp \
-./src/qt/sendcoinsentry.cpp \
-./src/qt/addressbookpage.cpp \
-./src/qt/qrcodedialog.cpp \
-./src/qt/clientmodel.cpp \
-./src/qt/coincontroltreewidget.cpp \
-./src/qt/coincontroldialog.cpp \
-./src/qt/optionsdialog.cpp \
-./src/qt/qvalidatedlineedit.cpp \
-./src/qt/qtipcserver.cpp \
-./src/qt/rpcconsole.cpp \
-./src/qt/aboutdialog.cpp \
-./src/qt/overviewpage.cpp \
-./src/qt/blockbrowser.cpp \
-./src/qt/showi2paddresses.cpp \
-./src/qt/bitcoin.cpp \
-./src/qt/csvmodelwriter.cpp \
-./src/qt/transactiondesc.cpp \
-./src/qt/transactionfilterproxy.cpp \
-./src/qt/radio.cpp \
-./src/qt/transactiondescdialog.cpp \
-./src/qt/chatwindow.cpp \
-./src/qt/bitcoingui.cpp \
-./src/qt/monitoreddatamapper.cpp \
-./src/qt/test/test_main.cpp \
-./src/qt/test/uritests.cpp\ 
-./src/qt/signverifymessagedialog.cpp \
-./src/qt/qvaluecombobox.cpp \
-./src/qt/transactionrecord.cpp \
-./src/alert.cpp \
-./src/wallet.cpp \
-./src/chainparamsbase.cpp \
-./src/net.cpp \
-./src/sync.cpp \
-./src/scrypt-sse2.cpp \
-./src/crypter.cpp \
-./src/addrman.cpp \
-./src/bloom.cpp \
-./src/txdb-leveldb.cpp \
-./src/i2psam.cpp \
-./src/rpcnet.cpp \
-./src/version.cpp \
-./src/hash.cpp \
-./src/showi2paddresses.cpp \
-./src/pbkdf2.cpp \
-./src/rpcblockchain.cpp \
-./src/bitcoinrpc.cpp \
-./src/rpcmining.cpp \
-./src/rpcdump.cpp\ 
-./src/rpcrawtransaction.cpp\ 
-./src/noui.cpp \
-./src/json/json_spirit_writer.cpp \
-./src/json/json_spirit_value.cpp \
-./src/json/json_spirit_reader.cpp \
-./src/checkpoints.cpp \
-./src/util.cpp \
-./src/init.cpp \
-./src/kernel.cpp \
-./src/daemon.cpp \
-./src/i2p.cpp \
-./src/keystore.cpp \
-./src/scrypt.cpp\ 
+  ./src/walletdb.cpp \
+  ./src/db.cpp \
+  ./src/key.cpp \
+  ./src/script.cpp \
+  ./src/rpcwallet.cpp \
+  ./src/main.cpp \
+  ./src/protocol.cpp \
+  ./src/qt/serveur.cpp \
+  ./src/qt/i2poptionswidget.cpp \
+  ./src/qt/notificator.cpp \
+  ./src/qt/askpassphrasedialog.cpp \
+  ./src/qt/transactiontablemodel.cpp \
+  ./src/qt/multisiginputentry.cpp \
+  ./src/qt/bitcoinamountfield.cpp \
+  ./src/qt/sendcoinsdialog.cpp \
+  ./src/qt/multisigaddressentry.cpp \
+  ./src/qt/bitcoinaddressvalidator.cpp \
+  ./src/qt/bitcoinunits.cpp \
+  ./src/qt/transactionview.cpp \
+  ./src/qt/bitcoinstrings.cpp \
+  ./src/qt/guiutil.cpp \
+  ./src/qt/addresstablemodel.cpp \
+  ./src/qt/editaddressdialog.cpp \
+  ./src/qt/walletmodel.cpp \
+  ./src/qt/multisigdialog.cpp \
+  ./src/qt/optionsmodel.cpp \
+  ./src/qt/sendcoinsentry.cpp \
+  ./src/qt/addressbookpage.cpp \
+  ./src/qt/qrcodedialog.cpp \
+  ./src/qt/clientmodel.cpp \
+  ./src/qt/coincontroltreewidget.cpp \
+  ./src/qt/coincontroldialog.cpp \
+  ./src/qt/optionsdialog.cpp \
+  ./src/qt/qvalidatedlineedit.cpp \
+  ./src/qt/qtipcserver.cpp \
+  ./src/qt/rpcconsole.cpp \
+  ./src/qt/aboutdialog.cpp \
+  ./src/qt/overviewpage.cpp \
+  ./src/qt/blockbrowser.cpp \
+  ./src/qt/showi2paddresses.cpp \
+  ./src/qt/bitcoin.cpp \
+  ./src/qt/csvmodelwriter.cpp \
+  ./src/qt/transactiondesc.cpp \
+  ./src/qt/transactionfilterproxy.cpp \
+  ./src/qt/radio.cpp \
+  ./src/qt/transactiondescdialog.cpp \
+  ./src/qt/chatwindow.cpp \
+  ./src/qt/bitcoingui.cpp \
+  ./src/qt/monitoreddatamapper.cpp \
+  ./src/qt/test/test_main.cpp \
+  ./src/qt/test/uritests.cpp\ 
+  ./src/qt/signverifymessagedialog.cpp \
+  ./src/qt/qvaluecombobox.cpp \
+  ./src/qt/transactionrecord.cpp \
+  ./src/alert.cpp \
+  ./src/wallet.cpp \
+  ./src/chainparamsbase.cpp \
+  ./src/net.cpp \
+  ./src/sync.cpp \
+  ./src/scrypt-sse2.cpp \
+  ./src/crypter.cpp \
+  ./src/addrman.cpp \
+  ./src/bloom.cpp \
+  ./src/txdb-leveldb.cpp \
+  ./src/i2psam.cpp \
+  ./src/rpcnet.cpp \
+  ./src/version.cpp \
+  ./src/hash.cpp \
+  ./src/showi2paddresses.cpp \
+  ./src/pbkdf2.cpp \
+  ./src/rpcblockchain.cpp \
+  ./src/bitcoinrpc.cpp \
+  ./src/rpcmining.cpp \
+  ./src/rpcdump.cpp\ 
+  ./src/rpcrawtransaction.cpp\ 
+  ./src/noui.cpp \
+  ./src/json/json_spirit_writer.cpp \
+  ./src/json/json_spirit_value.cpp \
+  ./src/json/json_spirit_reader.cpp \
+  ./src/checkpoints.cpp \
+  ./src/util.cpp \
+  ./src/init.cpp \
+  ./src/kernel.cpp \
+  ./src/daemon.cpp \
+  ./src/i2p.cpp \
+  ./src/keystore.cpp \
+  ./src/scrypt.cpp\ 
 
 
 RESOURCES += \
@@ -481,27 +481,27 @@ RESOURCES += \
 #    src/qt/res/themes/qlightstyle/qlightstyle.qrc
 
 FORMS += \
-./src/qt/forms/aboutdialog.ui \
-./src/qt/forms/editaddressdialog.ui \
-./src/qt/forms/sendcoinsdialog.ui \
-./src/qt/forms/multisiginputentry.ui \
-./src/qt/forms/chatwindow.ui \
-./src/qt/forms/showi2paddresses.ui \
-./src/qt/forms/askpassphrasedialog.ui \
-./src/qt/forms/qrcodedialog.ui \
-./src/qt/forms/signverifymessagedialog.ui \
-./src/qt/forms/overviewpage.ui \
-./src/qt/forms/radio.ui \
-./src/qt/forms/multisigdialog.ui \
-./src/qt/forms/optionsdialog.ui \
-./src/qt/forms/blockbrowser.ui \
-./src/qt/forms/multisigaddressentry.ui \
-./src/qt/forms/sendcoinsentry.ui \
-./src/qt/forms/transactiondescdialog.ui\ 
-./src/qt/forms/addressbookpage.ui \
-./src/qt/forms/coincontroldialog.ui \
-./src/qt/forms/i2poptionswidget.ui \
-./src/qt/forms/rpcconsole.ui \
+  ./src/qt/forms/aboutdialog.ui \
+  ./src/qt/forms/editaddressdialog.ui \
+  ./src/qt/forms/sendcoinsdialog.ui \
+  ./src/qt/forms/multisiginputentry.ui \
+  ./src/qt/forms/chatwindow.ui \
+  ./src/qt/forms/showi2paddresses.ui \
+  ./src/qt/forms/askpassphrasedialog.ui \
+  ./src/qt/forms/qrcodedialog.ui \
+  ./src/qt/forms/signverifymessagedialog.ui \
+  ./src/qt/forms/overviewpage.ui \
+  ./src/qt/forms/radio.ui \
+  ./src/qt/forms/multisigdialog.ui \
+  ./src/qt/forms/optionsdialog.ui \
+  ./src/qt/forms/blockbrowser.ui \
+  ./src/qt/forms/multisigaddressentry.ui \
+  ./src/qt/forms/sendcoinsentry.ui \
+  ./src/qt/forms/transactiondescdialog.ui\ 
+  ./src/qt/forms/addressbookpage.ui \
+  ./src/qt/forms/coincontroldialog.ui \
+  ./src/qt/forms/i2poptionswidget.ui \
+  ./src/qt/forms/rpcconsole.ui \
 
 
 contains(USE_QRCODE, 1) {
