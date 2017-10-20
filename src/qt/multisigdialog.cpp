@@ -508,7 +508,7 @@ void MultisigDialog::on_sendTransactionButton_clicked()
 
     // Send the transaction to the local node
     CTxDB txdb("r");
-    if(!tx.AcceptToMemoryPool(txdb, false))
+    if(!tx.AcceptToMemoryPool(txdb, &false))
         return;
     SyncWithWallets(tx, NULL, true);
     RelayTransaction(tx, txHash);
