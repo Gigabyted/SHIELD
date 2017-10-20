@@ -1883,3 +1883,14 @@ void CScript::SetMultisig(int nRequired, const std::vector<CKey>& keys)
         *this << key.GetPubKey();
     *this << EncodeOP_N(keys.size()) << OP_CHECKMULTISIG;
 }
+
+void CScript::SetMultisig(int nRequired, const std::vector<CPubKey>& keys)
+{
+    this->clear();
+
+    *this << EncodeOP_N(nRequired);
+    BOOST_FOREACH(const CPubKey& key, keys)
+        *this << key;
+    *this << EncodeOP_N(keys.size()) << OP_CHECKMULTISIG;
+}
+
