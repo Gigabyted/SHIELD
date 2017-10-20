@@ -157,6 +157,7 @@ public:
     bool VerifyCompact(uint256 hash, const std::vector<unsigned char>& vchSig);
 
     bool IsValid();
+    bool IsFullyValid();
 };
 
 #endif
