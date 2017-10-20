@@ -88,6 +88,8 @@ public:
     bool IsValid() const {
         return vchPubKey.size() == 33 || vchPubKey.size() == 65;
     }
+    
+    bool IsFullyValid();
 
     bool IsCompressed() const {
         return vchPubKey.size() == 33;
@@ -157,7 +159,6 @@ public:
     bool VerifyCompact(uint256 hash, const std::vector<unsigned char>& vchSig);
 
     bool IsValid();
-    bool IsFullyValid();
 };
 
 #endif
