@@ -20,7 +20,7 @@
 #include "walletmodel.h"
 
 
-MultisigDialog::MultisigDialog(QWidget *parent) : QDialog(parent), ui(new Ui::MultisigDialog), model(0)
+MultisigDialog::MultisigDialog(QDialog *parent) : QDialog(parent), ui(new Ui::MultisigDialog), model(0)
 {
     ui->setupUi(this);
 
@@ -508,7 +508,7 @@ void MultisigDialog::on_sendTransactionButton_clicked()
 
     // Send the transaction to the local node
     CTxDB txdb("r");
-    if(!tx.AcceptToMemoryPool(txdb, &false))
+    if(!tx.AcceptToMemoryPool(txdb))
         return;
     SyncWithWallets(tx, NULL, true);
     RelayTransaction(tx, txHash);
