@@ -14,14 +14,12 @@ namespace Ui
     class MultisigDialog;
 }
 
-class MultisigDialog : public QWidget
+class MultisigDialog : public QDialog
 {
     Q_OBJECT;
-  protected:
-    void keyPressEvent(QKeyEvent *);
 
   public:
-    explicit MultisigDialog(QWidget *parent);
+    explicit MultisigDialog(QDialog *parent);
     MultisigDialog();
     ~MultisigDialog();
     void setModel(WalletModel *model);
