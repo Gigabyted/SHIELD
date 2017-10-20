@@ -2,6 +2,7 @@
 #define MULTISIGDIALOG_H
 
 #include <QWidget>
+#include <QDialog>
 
 #include "multisigaddressentry.h"
 #include "multisiginputentry.h"
