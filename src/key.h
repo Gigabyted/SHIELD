@@ -8,6 +8,9 @@
 #include <stdexcept>
 #include <vector>
 
+ #include <openssl/ec.h>
+ #include <openssl/bn.h>
+
 #include "allocators.h"
 #include "serialize.h"
 #include "uint256.h"
