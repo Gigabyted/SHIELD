@@ -91,7 +91,7 @@ public:
     )
     
     unsigned int size() const { return GetLen(vchPubKey[0]); }
-    const unsigned char* begin() const { return vchPubKey; }
+    const unsigned char* begin() const { return &vchPubKey[0]; }
     const unsigned char* end() const { return &vchPubKey[0] + size(); }
 
     CKeyID GetID() const {
