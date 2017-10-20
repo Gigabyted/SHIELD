@@ -445,15 +445,3 @@ bool CKey::IsValid()
     return GetPubKey() == key2.GetPubKey();
 }
 
-    //! fully validate whether this is a valid public key (more expensive than IsValid())
-    bool IsFullyValid() const
-    {
-        const unsigned char* pbegin = &vbytes[0];
-        EC_KEY *pkey = EC_KEY_new_by_curve_name(NID_secp256k1);
-        if (o2i_ECPublicKey(&pkey, &pbegin, size()))
-        {
-            EC_KEY_free(pkey);
-            return true;
-        }
-        return false;
-}
