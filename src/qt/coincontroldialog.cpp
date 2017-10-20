@@ -24,6 +24,8 @@
 using namespace std;
 QList<std::pair<QString, qint64> > CoinControlDialog::payAddresses;
 CCoinControl* CoinControlDialog::coinControl = new CCoinControl();
+extern int nStakeMaxAge;
+extern int nStakeMinAge;
 
 CoinControlDialog::CoinControlDialog(QWidget *parent) :
     QDialog(parent),
