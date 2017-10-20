@@ -8,8 +8,9 @@
 #include <stdexcept>
 #include <vector>
 
- #include <openssl/ec.h>
- #include <openssl/bn.h>
+#include <openssl/ec.h>
+#include <openssl/obj_mac.h>
+#include <openssl/bn.h>
 
 #include "allocators.h"
 #include "serialize.h"
@@ -68,6 +69,15 @@ class CPubKey {
 private:
     std::vector<unsigned char> vchPubKey;
     friend class CKey;
+        //! Compute the length of a pubkey with a given first byte.
+    unsigned int static GetLen(unsigned char chHeader)
+    {
+        if (chHeader == 2 || chHeader == 3)
+            return 33;
+        if (chHeader == 4 || chHeader == 6 || chHeader == 7)
+            return 65;
+        return 0;
+     }
 
 public:
     CPubKey() { }
@@ -79,6 +89,10 @@ public:
     IMPLEMENT_SERIALIZE(
         READWRITE(vchPubKey);
     )
+    
+    unsigned int size() const { return GetLen(vchPubKey[0]); }
+    const unsigned char* begin() const { return vchPubKey; }
+    const unsigned char* end() const { return vchPubKey + size(); }
 
     CKeyID GetID() const {
         return CKeyID(Hash160(vchPubKey));
@@ -92,19 +106,19 @@ public:
         return vchPubKey.size() == 33 || vchPubKey.size() == 65;
     }
     
-        //! fully validate whether this is a valid public key (more expensive than IsValid())
-    bool IsFullyValid() const
-    {
-        const unsigned char* pbegin = &vbytes[0];
-        EC_KEY *pkey = EC_KEY_new_by_curve_name(NID_secp256k1);
-        if (o2i_ECPublicKey(&pkey, &pbegin, size()))
+    bool IsFullyValid() const {
+       const unsigned char* pbegin = &vchPubKey[0];
+       if (!IsValid())
+           return false;
+       EC_KEY *pkey = EC_KEY_new_by_curve_name(NID_secp256k1);
+        if (!o2i_ECPublicKey(&pkey, &pbegin, size()))
         {
             EC_KEY_free(pkey);
             return true;
         }
-        return false;
-    }
-
+       return true;
+   }
+ 
     bool IsCompressed() const {
         return vchPubKey.size() == 33;
     }
