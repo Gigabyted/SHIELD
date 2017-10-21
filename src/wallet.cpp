@@ -13,7 +13,6 @@
 #include <boost/algorithm/string.hpp>
 
 using namespace std;
-extern int nStakeMaxAge;
 extern bool fHeadless;
 
 //////////////////////////////////////////////////////////////////////////////
