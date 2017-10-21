@@ -461,7 +461,7 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
     model->getOutputs(vCoinControl, vOutputs);
 
     nPayFee = nTransactionFee;
-    while(1)
+    loop
     {
         txDummy.vin.clear();
         txDummy.vout.clear();
