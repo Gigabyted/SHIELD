@@ -120,7 +120,12 @@ T* alignup(T* p)
 
 inline void MilliSleep(int64_t n)
 {
-    boost::this_thread::sleep(boost::posix_time::milliseconds(n));
+#if BOOST_VERSION >= 105000
+    boost::this_thread::sleep_for(boost::chrono::milliseconds(n));
+#else
+     boost::this_thread::sleep(boost::posix_time::milliseconds(n));
+     boost::this_thread::sleep(boost::posix_time::milliseconds(n));
+#endif
 
 }
 /* This GNU C extension enables the compiler to check the format string against the parameters provided.
