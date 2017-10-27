@@ -716,7 +716,7 @@ void ThreadSocketHandler2(void* parg)
         if (vNodes.size() != nPrevNodeCount)
         {
             nPrevNodeCount = vNodes.size();
-            uiInterface.NotifyNumConnectionsChanged(vNodes.size());
+            //uiInterface.NotifyNumConnectionsChanged(vNodes.size());
         }
 
 
@@ -1086,7 +1086,7 @@ void ThreadMapPort2(void* parg)
                     printf("AddPortMapping(%s, %s, %s) failed with code %d (%s)\n",
                         port.c_str(), port.c_str(), lanaddr, r, strupnperror(r));
                 else
-                    printf("UPnP Port Mapping successful.\n");;
+                    printf("UPnP Port Mapping successful.\n");
             }
             MilliSleep(2000);
             i++;
@@ -1860,8 +1860,8 @@ void StartNode(void* parg)
         printf("Error; NewThread(ThreadDumpAddress) failed\n");
 
     // ppcoin: mint proof-of-stake blocks in the background
-    //if (!NewThread(ThreadStakeMinter, pwalletMain))
-    //    printf("Error: NewThread(ThreadStakeMinter) failed\n");
+    if (!NewThread(ThreadStakeMinter, pwalletMain))
+        printf("Error: NewThread(ThreadStakeMinter) failed\n");
 
     // Generate coins in the background
     GenerateBitcoins(GetBoolArg("-gen", false), pwalletMain);

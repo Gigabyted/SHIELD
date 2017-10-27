@@ -277,7 +277,7 @@ public:
     enum
     {
         PUBKEY_ADDRESS = 63,  // SHIELD: address begin with 'S'
-        SCRIPT_ADDRESS = 33, 
+        SCRIPT_ADDRESS = 33,
         PUBKEY_ADDRESS_TEST = 115,
         SCRIPT_ADDRESS_TEST = 198,
     };

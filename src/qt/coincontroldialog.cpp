@@ -24,6 +24,7 @@
 using namespace std;
 QList<std::pair<QString, qint64> > CoinControlDialog::payAddresses;
 CCoinControl* CoinControlDialog::coinControl = new CCoinControl();
+extern unsigned int nStakeMaxAge;
 
 CoinControlDialog::CoinControlDialog(QWidget *parent) :
     QDialog(parent),
@@ -461,7 +462,7 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
     model->getOutputs(vCoinControl, vOutputs);
 
     nPayFee = nTransactionFee;
-    loop
+    while(1)
     {
         txDummy.vin.clear();
         txDummy.vout.clear();

@@ -349,7 +349,7 @@ void BlockBrowser::updateExplorer(bool block)
         ui->timeLabel->show();
         ui->timeBox->show();
         ui->hardLabel->show();
-        ui->hardBox->show();;
+        ui->hardBox->show();
         ui->pawLabel->show();
         ui->pawBox->show();
         int height = ui->heightBox->value();

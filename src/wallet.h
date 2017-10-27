@@ -89,7 +89,7 @@ public:
 
     std::set<int64> setKeyPool;
 
-
+    void ListLockedCoins(std::vector<COutPoint>& vOutpts);
     typedef std::map<unsigned int, CMasterKey> MasterKeyMap;
     MasterKeyMap mapMasterKeys;
     unsigned int nMasterKeyMaxID;
@@ -121,7 +121,7 @@ public:
     std::map<CTxDestination, std::string> mapAddressBook;
 
     CPubKey vchDefaultKey;
-
+    std::set<COutPoint> setLockedCoins;
     // check whether we are allowed to upgrade (or already support) to the named feature
     bool CanSupportFeature(enum WalletFeature wf) { return nWalletMaxVersion >= wf; }
 

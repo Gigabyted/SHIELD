@@ -12,6 +12,7 @@
 #include <QSet>
 #include <QTimer>
 
+
 WalletModel::WalletModel(CWallet *wallet, OptionsModel *optionsModel, QObject *parent) :
     QObject(parent), wallet(wallet), optionsModel(optionsModel), addressTableModel(0),
     transactionTableModel(0),
@@ -382,6 +383,51 @@ bool WalletModel::getPubKey(const CKeyID &address, CPubKey& vchPubKeyOut) const
 {
     return wallet->GetPubKey(address, vchPubKeyOut);
 }
+
+// returns a list of COutputs from COutPoints
+void WalletModel::getOutputs(const std::vector<COutPoint>& vOutpoints, std::vector<COutput>& vOutputs)
+ {
+     BOOST_FOREACH(const COutPoint& outpoint, vOutpoints)
+     {
+         if (!wallet->mapWallet.count(outpoint.hash)) continue;
+         COutput out(&wallet->mapWallet[outpoint.hash], outpoint.n, wallet->mapWallet[outpoint.hash].GetDepthInMainChain());
+         vOutputs.push_back(out);
+     }
+}
+
+
+// AvailableCoins + LockedCoins grouped by wallet address (put change in one group with wallet address)
+ void WalletModel::listCoins(std::map<QString, std::vector<COutput> >& mapCoins) const
+  {
+      std::vector<COutput> vCoins;
+     wallet->AvailableCoins(vCoins);
+
+     std::vector<COutPoint> vLockedCoins;
+     wallet->ListLockedCoins(vLockedCoins);
+
+     // add locked coins
+     BOOST_FOREACH(const COutPoint& outpoint, vLockedCoins)
+     {
+         if (!wallet->mapWallet.count(outpoint.hash)) continue;
+         COutput out(&wallet->mapWallet[outpoint.hash], outpoint.n, wallet->mapWallet[outpoint.hash].GetDepthInMainChain());
+         vCoins.push_back(out);
+     }
+
+     BOOST_FOREACH(const COutput& out, vCoins)
+     {
+         COutput cout = out;
+
+         while (wallet->IsChange(cout.tx->vout[cout.i]) && cout.tx->vin.size() > 0 && wallet->IsMine(cout.tx->vin[0]))
+         {
+             if (!wallet->mapWallet.count(cout.tx->vin[0].prevout.hash)) break;
+             cout = COutput(&wallet->mapWallet[cout.tx->vin[0].prevout.hash], cout.tx->vin[0].prevout.n, 0);
+         }
+
+         CTxDestination address;
+         if(!ExtractDestination(cout.tx->vout[cout.i].scriptPubKey, address)) continue;
+         mapCoins[CBitcoinAddress(address).ToString().c_str()].push_back(out);
+     }
+ }
 
 CWallet * WalletModel::getWallet()
 {

@@ -1210,13 +1210,13 @@ unsigned int GetNextTargetRequired_V2(const CBlockIndex* pindexLast, bool fProof
     if (bnNew > bnProofOfWorkLimit[algo])
       bnNew = bnProofOfWorkLimit[algo];
 
-    printf("difficulty: ctual time %" PRId64 ", Scheduled time for this block height = %" PRId64 "\n", now, BlockHeightTime );
-    printf("difficulty: Nominal block interval = %u, regulating on interval %" PRId64 " to get back to schedule.\n", 
-          GetTargetSpacing(pindexLast->nHeight), nIntervalDesired );
-    printf("difficulty: Intervals of last 5/7/9/17 blocks = %" PRId64 "/ %" PRId64 " / %" PRId64 " / %" PRId64 ".\n",
-          avgOf5, avgOf7, avgOf9, avgOf17);
-    printf("difficulty: Difficulty Before Adjustment: %u  %s\n", pindexLast->nBits, bnOld.ToString().c_str());
-    printf("difficulty: Difficulty After Adjustment:  %u  %s\n", bnNew.GetCompact(), bnNew.ToString().c_str());
+//    printf("difficulty: ctual time %" PRId64 ", Scheduled time for this block height = %" PRId64 "\n", now, BlockHeightTime );
+//    printf("difficulty: Nominal block interval = %u, regulating on interval %" PRId64 " to get back to schedule.\n",
+//          GetTargetSpacing(pindexLast->nHeight), nIntervalDesired );
+//    printf("difficulty: Intervals of last 5/7/9/17 blocks = %" PRId64 "/ %" PRId64 " / %" PRId64 " / %" PRId64 ".\n",
+//          avgOf5, avgOf7, avgOf9, avgOf17);
+//    printf("difficulty: Difficulty Before Adjustment: %u  %s\n", pindexLast->nBits, bnOld.ToString().c_str());
+//    printf("difficulty: Difficulty After Adjustment:  %u  %s\n", bnNew.GetCompact(), bnNew.ToString().c_str());
 
     return bnNew.GetCompact();
      
@@ -4086,6 +4086,7 @@ bool ProcessMessages(CNode* pfrom)
     CDataStream& vRecv = pfrom->vRecv;
     if (vRecv.empty())
         return true;
+
     //if (fDebug)
     //    printf("ProcessMessages(%u bytes)\n", vRecv.size());
 

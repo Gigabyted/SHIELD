@@ -2168,3 +2168,12 @@ void CWallet::UpdatedTransaction(const uint256 &hashTx)
             NotifyTransactionChanged(this, hashTx, CT_UPDATED);
     }
 }
+
+void CWallet::ListLockedCoins(std::vector<COutPoint>& vOutpts)
+{
+     for (std::set<COutPoint>::iterator it = setLockedCoins.begin();
+          it != setLockedCoins.end(); it++) {
+         COutPoint outpt = (*it);
+         vOutpts.push_back(outpt);
+     }
+}

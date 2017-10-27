@@ -28,7 +28,6 @@ ShowI2PAddresses::ShowI2PAddresses(const QString& caption, const QString& pub, c
                      ui->b32Line, SLOT(copy()));
 }
 
-ShowI2PAddresses::~ShowI2PAddresses()
-{
+ShowI2PAddresses::~ShowI2PAddresses(){
     delete ui;
 }
